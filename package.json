@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./app"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
@@ -13,6 +13,8 @@
     "express": "~4.14.1",
     "morgan": "~1.7.0",
     "pi-gpio": "0.0.8",
-    "serve-favicon": "~2.3.2"
+    "rpio": "^0.9.16",
+    "serve-favicon": "~2.3.2",
+    "socket.io-client": "^1.7.3"
   }
 }
