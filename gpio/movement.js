@@ -36,7 +36,7 @@ let moveBackward = (time) => {
 let moveRight = (time) => {
   console.log('in right');
   makePulse(motorRight1,130, time);
-  makePulse(motorLeft1);
+  makePulse(motorLeft1, 244, time);
   return readyForNext();
 };
 let moveLeft = (time) => {

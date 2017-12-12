@@ -17,6 +17,7 @@ socket.on('forward', moveForward);
 socket.on('backward', moveBackward);
 
 socket.on('move',async (data) => {
+  console.log(data);
   for(let i =0; i<data.length; i++) {
      const cmd = data[i];
      if(cmd === 'forward') {
