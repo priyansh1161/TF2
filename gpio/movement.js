@@ -46,7 +46,6 @@ let moveLeft = (time) => {
 };
 
 module.exports = {
-  togglePower,
   moveForward,
   moveBackward,
   moveRight,
