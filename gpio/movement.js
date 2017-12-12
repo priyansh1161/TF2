@@ -13,29 +13,36 @@ function makePulse(pin, width = 244 , time = 800) {
     clearInterval(interval)
   }, time);
 }
+function readyForNext(time = 800) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
+}
 
-let togglePower = (value) => {
+let moveForward = (time) => {
+  makePulse(motorLeft1,244, time);
+  makePulse(motorRight1,244, time);
+  return readyForNext();
+};
+let moveBackward = (time) => {
+  makePulse(motorLeft2,244, time);
+  makePulse(motorRight2,244, time);
+  return readyForNext();
 
 };
 
-let moveForward = () => {
-  makePulse(motorLeft1);
-  makePulse(motorRight1);
-};
-let moveBackward = () => {
-  makePulse(motorLeft2);
-  makePulse(motorRight2);
-};
-
-let moveRight = () => {
+let moveRight = (time) => {
   console.log('in right');
-  makePulse(motorRight1,130);
+  makePulse(motorRight1,130, time);
   makePulse(motorLeft1);
-
+  return readyForNext();
 };
-let moveLeft = () => {
-  makePulse(motorLeft1,130);
-  makePulse(motorRight1);
+let moveLeft = (time) => {
+  makePulse(motorLeft1,130, time);
+  makePulse(motorRight1,244, time);
+  return readyForNext();
 };
 
 module.exports = {
