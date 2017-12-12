@@ -1,4 +1,4 @@
-let Gpio = require('rpio').Gpio;
+let Gpio = require('pigpio').Gpio;
 let motorLeft1 = new Gpio(12, {mode: Gpio.OUTPUT}); // 31
 let motorLeft2 = new Gpio(6, {mode: Gpio.OUTPUT}); //  32
 let motorRight1 = new Gpio(13, {mode: Gpio.OUTPUT});// 33
