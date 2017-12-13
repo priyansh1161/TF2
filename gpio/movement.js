@@ -4,7 +4,7 @@ let motorLeft2 = new Gpio(6, {mode: Gpio.OUTPUT}); //  32
 let motorRight1 = new Gpio(13, {mode: Gpio.OUTPUT});// 33
 let motorRight2 = new Gpio(19, {mode: Gpio.OUTPUT});//35
 
-function makePulse(pin, width = 244 , time = 800) {
+function makePulse(pin, width = 255 , time = 800) {
   let interval =  setInterval(function () {
     pin.pwmWrite(width);
   }, 20);
@@ -22,25 +22,25 @@ function readyForNext(time = 800) {
 }
 
 let moveForward = (time) => {
-  makePulse(motorLeft1,244, time);
-  makePulse(motorRight1,244, time);
+  makePulse(motorLeft1,255, time);
+  makePulse(motorRight1,255, time);
   return readyForNext(time);
 };
 let moveBackward = (time) => {
-  makePulse(motorLeft2,244, time);
-  makePulse(motorRight2,244, time);
+  makePulse(motorLeft2,255, time);
+  makePulse(motorRight2,255, time);
   return readyForNext(time);
 
 };
 
 let moveRight = (time) => {
   makePulse(motorRight1,0 , time);
-  makePulse(motorLeft1, 244, time);
+  makePulse(motorLeft1, 255, time);
   return readyForNext(time);
 };
 let moveLeft = (time) => {
   makePulse(motorLeft1,0 , time);
-  makePulse(motorRight1,244, time);
+  makePulse(motorRight1,255, time);
   return readyForNext(time);
 };
 
