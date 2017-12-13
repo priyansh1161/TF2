@@ -12,7 +12,7 @@ socket.on('power', function(data){
   moveForward(3000);
 });
 
-const TIME = 3000;
+// const TIME = 3000;
 
 socket.on('left', moveLeft);
 socket.on('right', moveRight);
@@ -22,7 +22,8 @@ socket.on('backward', moveBackward);
 socket.on('move',async (data) => {
   console.log(data);
   for(let i =0; i<data.length; i++) {
-     const cmd = data[i];
+     const cmd = data[i].cmd;
+     const TIME = data[i].time;
      console.log('current command ->>', cmd);
      switch (cmd) {
        case 'forward':
