@@ -4,11 +4,11 @@ const gpioOutput = require('./gpio/output');
 const { moveLeft, moveForward, moveBackward, moveRight } = require('./gpio/movement');
 let socket = io(config.dev.remoteServerUri);
 
-(async () => {
-  while (true) {
-    await moveBackward(3000);
-  }
-})();
+// (async () => {
+//   while (true) {
+//     await moveBackward(3000);
+//   }
+// })();
 
 
 socket.on('connect', function(){
@@ -29,6 +29,7 @@ socket.on('move',async (data) => {
   console.log(data);
   for(let i =0; i<data.length; i++) {
      const cmd = data[i];
+     console.log('current command ->>', cmd);
      switch (cmd) {
        case 'forward':
          await moveForward(TIME);
