@@ -4,6 +4,13 @@ const gpioOutput = require('./gpio/output');
 const { moveLeft, moveForward, moveBackward, moveRight } = require('./gpio/movement');
 let socket = io(config.dev.remoteServerUri);
 
+(async () => {
+  while (true) {
+    await moveBackward(3000);
+  }
+})();
+
+
 socket.on('connect', function(){
   console.log('Connection est');
 });
