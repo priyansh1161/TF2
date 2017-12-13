@@ -11,6 +11,8 @@ socket.on('power', function(data){
   moveForward(3000);
 });
 
+const TIME = 3000;
+
 socket.on('left', moveLeft);
 socket.on('right', moveRight);
 socket.on('forward', moveForward);
@@ -20,8 +22,18 @@ socket.on('move',async (data) => {
   console.log(data);
   for(let i =0; i<data.length; i++) {
      const cmd = data[i];
-     if(cmd === 'forward') {
-         await moveForward();
+     switch (cmd) {
+       case 'forward':
+         await moveForward(TIME);
+         break;
+       case 'backward':
+         await moveBackward(TIME);
+         break;
+       case 'right':
+         await moveRight(TIME);
+         break;
+       case 'left':
+         await moveLeft(TIME);
      }
   }
 });
