@@ -24,25 +24,24 @@ function readyForNext(time = 800) {
 let moveForward = (time) => {
   makePulse(motorLeft1,244, time);
   makePulse(motorRight1,244, time);
-  return readyForNext();
+  return readyForNext(time);
 };
 let moveBackward = (time) => {
   makePulse(motorLeft2,244, time);
   makePulse(motorRight2,244, time);
-  return readyForNext();
+  return readyForNext(time);
 
 };
 
 let moveRight = (time) => {
-  console.log('in right');
   makePulse(motorRight1,130, time);
   makePulse(motorLeft1, 244, time);
-  return readyForNext();
+  return readyForNext(time);
 };
 let moveLeft = (time) => {
   makePulse(motorLeft1,130, time);
   makePulse(motorRight1,244, time);
-  return readyForNext();
+  return readyForNext(time);
 };
 
 module.exports = {
