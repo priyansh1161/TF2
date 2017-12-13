@@ -34,12 +34,12 @@ let moveBackward = (time) => {
 };
 
 let moveRight = (time) => {
-  makePulse(motorRight1,130, time);
+  makePulse(motorRight1,0 , time);
   makePulse(motorLeft1, 244, time);
   return readyForNext(time);
 };
 let moveLeft = (time) => {
-  makePulse(motorLeft1,130, time);
+  makePulse(motorLeft1,0 , time);
   makePulse(motorRight1,244, time);
   return readyForNext(time);
 };
